@@ -718,6 +718,13 @@ class WindowBase(EventDispatcher):
     defaults to True.
     '''
 
+    relative_mouse = BooleanProperty(False)
+    '''Set whether or not the mouse is set to relative mode.
+
+    :attr:`relative_mouse` is a :class:`~kivy.properties.BooleanProperty` and
+    defaults to False.
+    '''
+
     def _get_focus(self):
         return self._focus
 
@@ -934,6 +941,9 @@ class WindowBase(EventDispatcher):
                   keyboard_height=lambda *dt: self.update_viewport())
 
         self.bind(show_cursor=lambda *dt: self._set_cursor_state(dt[1]))
+
+        self.bind(relative_mouse=lambda *dt: 
+                                   self._set_relative_mouse_state(dt[1]))
 
         # init privates
         self._system_keyboard = Keyboard(window=self)

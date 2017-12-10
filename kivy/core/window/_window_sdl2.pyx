@@ -222,6 +222,9 @@ cdef class _WindowSDL2Storage:
     def _set_cursor_state(self, value):
         SDL_ShowCursor(value)
 
+    def _set_relative_mouse_state(self, value):
+        SDL_SetRelativeMouseMode(value)
+
     def set_system_cursor(self, str name):
         if name == 'arrow':
             num = SDL_SYSTEM_CURSOR_ARROW

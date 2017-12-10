@@ -552,6 +552,7 @@ cdef extern from "SDL.h":
     cdef void SDL_SetWindowMinimumSize(SDL_Window * window, int min_w, int min_h)
     cdef void SDL_SetWindowBordered(SDL_Window * window, SDL_bool bordered)
     cdef void SDL_ShowWindow(SDL_Window * window)
+    cdef int SDL_SetRelativeMouseMode(SDL_bool enabled)
     cdef int SDL_ShowCursor(int toggle)
     cdef void SDL_SetCursor(SDL_Cursor * cursor)
     cdef SDL_Cursor* SDL_CreateSystemCursor(SDL_SystemCursor id)
